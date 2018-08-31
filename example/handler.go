@@ -12,6 +12,13 @@ func main() {
 
 	r := gin.New()
 	r.GET("/go/hello", helloHandler)
+	r.GET("/go/spacetravel", func(context *gin.Context) {
+		context.Writer.Header().Set("Content-Type", "image/gif")
+		err := spaceTravel(context.Writer)
+		if err != nil {
+			context.Error(err)
+		}
+	})
 	r.GET("/go/hijacked", hijack)
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(404, c.Request.URL)
