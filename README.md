@@ -2,6 +2,11 @@
 use go http handler in nodejs
 
 live example
-https://gonowa.thisisnotajoke.lol/go/hello
-https://gonowa.thisisnotajoke.lol/
-https://gonowa.thisisnotajoke.lol/go/hijacked
+
+[hello from go](https://gonowa.thisisnotajoke.lol/go/hello)
+
+[hello from js](https://gonowa.thisisnotajoke.lol/)
+
+[hello from go hijacked](https://gonowa.thisisnotajoke.lol/go/hijacked)
+
+
