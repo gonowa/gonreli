@@ -45,8 +45,7 @@ Date: Wed, 26 Nov 2018 03:37:57 GMT
 Content-Length: %d
 Content-Type: text/plain; charset=utf-8
 
-%s
-`
+%s`
 	var text = "hello hijacked"
 
 	fmt.Fprintf(brw, httpreply, len(text), text)
