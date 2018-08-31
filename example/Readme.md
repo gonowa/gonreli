@@ -6,3 +6,7 @@ live example
 
 [hello from go hijacked](https://gonowa.thisisnotajoke.lol/go/hijacked)
 
+[space travel(generated gif)](https://gonowa.thisisnotajoke.lol/go/spacetravel)
+
+
+
