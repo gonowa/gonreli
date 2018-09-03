@@ -6,7 +6,8 @@
 *.dylib
 
 */*node_modules
-*/*go.wasm
+*/*.wasm
+.idea
 # Test binary, build with `go test -c`
 *.test
 

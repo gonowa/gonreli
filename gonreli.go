@@ -1,4 +1,4 @@
-//+build js
+//+build js,wasm
 
 package gonreli
 
@@ -12,6 +12,7 @@ var (
 	jsSocketType = jsRequire.Invoke("net").Get("Socket")
 	jsBufferType = js.Global().Get("Buffer")
 	jsProcess    = js.Global().Get("process")
+	undefined    = js.Undefined()
 )
 
 func Wrap(h http.Handler) js.Callback {

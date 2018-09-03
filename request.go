@@ -1,4 +1,4 @@
-//+build js
+//+build js,wasm
 
 package gonreli
 
@@ -6,7 +6,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"strings"
@@ -14,16 +13,9 @@ import (
 	"syscall/js"
 )
 
-func init() {
-	log.SetFlags(log.Lshortfile)
-}
-
 type request struct {
 	js.Value
-
 	headers http.Header
-
-	reader io.Reader
 }
 
 func newRequest(v js.Value) *http.Request {
@@ -63,7 +55,8 @@ func (req *request) reqHeaderReader() io.Reader {
 	}
 
 	var builder strings.Builder
-	builder.WriteString(fmt.Sprintf("%s %s %s/%s\n", m, url.Path, "HTTP", "1.1"))
+	httpVersion := req.Get("httpVersion")
+	builder.WriteString(fmt.Sprintf("%s %s %s/%s\n", m, url.Path, "HTTP", httpVersion))
 	for i := range req.headers {
 		builder.WriteString(fmt.Sprintf("%s: %s\n", i, req.headers[i][0]))
 	}
