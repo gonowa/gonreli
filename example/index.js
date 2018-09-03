@@ -1,6 +1,6 @@
 let gobr = require("gonobridge")
 
-let goemitter = gobr.Init("go.wasm", [])
+let goemitter = gobr.Init("goO.wasm", [])
 
 goemitter.on("handler", function (handler) {
     const express = require('express')
